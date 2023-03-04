@@ -8,22 +8,22 @@ body{
 .player1{
     border: 5px solid black;
     height: 80px;
-    width: 200px;
-    /* text-align: center; */
+    width: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 20px;
-
+    font-size: 25px;
 }
 
 .player2{
     border: 5px solid black;
     height: 80px;
-    width: 200px;
+    width: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 25px;
 
 }
 .players{
@@ -79,7 +79,16 @@ body{
 .disabled{
     pointer-events: none;
 }
-
+.cell.O{
+    color: rgb(17, 124, 44);
+}
+.cell.X{
+    color: rgb(131, 65, 147);
+}
 .win_color{
     background-color: red;
+}
+.player_draw{
+    background-color: black;
+    /* animation-duration: 2s; */
 }

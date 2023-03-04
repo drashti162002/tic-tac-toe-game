@@ -33,23 +33,21 @@ cellElements.forEach(cell=>{
         cell.classList.add("disabled");
         cell.innerHTML = currentPlayer;
         cell.classList.add(currentPlayer);
-        //console.log(); 
+        
         if(winnercheck(currentPlayer)){
-            console.log("first condition")
+            // console.log("first condition" , winnercheck(currentPlayer))
             console.log(currentPlayer + "winner");
             winner = true;
-            if(winner){
-                //highlightCell(winner);
-                cell.classList.add("win_color");
-            }
             result_text.innerHTML = currentPlayer + " Win The Game";
-            //result_text.innerHTML = "Game Is Over";
-        }
+            addWinnerColor(currentPlayer)
+        }   
         else if(isDraw()){
         
             console.log("second condition")
-           result_text.innerHTML = "Game Is Draw"
-           console.log("game is draw");
+            result_text.innerHTML = "Game Is Draw"
+            console.log("game is draw");
+            playerDraw();
+           //cell.classList.add("player_draw");
         } 
         swapPlayer();
     }
@@ -73,15 +71,14 @@ function winnercheck(currentPlayer){
     })
 }
 
-// function highlightCell(winner){
-//     console.log("color");
-//     winner.forEach(index=>{
-//         cell[index].classList.add("color");
-//     });
-// }
-
-
-
+function  addWinnerColor(currentPlayer){
+     return winning_conditions.some(condition=>{
+        const temp = condition.every(index=>{
+            return cellElements[index].classList.contains(currentPlayer);
+        });
+        if(temp) condition = condition.filter((index)=> cellElements[index].classList.add("win_color"))
+    })
+}
 
 
 function isDraw(){
@@ -90,6 +87,14 @@ function isDraw(){
         return cell.classList.contains(playerO)  || cell.classList.contains(playerX);
     })
 }
+
+function playerdraw(){
+    return [...cellElements].every(cell=>{
+        return cell.classList.contains(playerO)  || cell.classList.contains(playerX);
+    })
+
+}
+
 
 function swapPlayer(){
     toggleTurn = !toggleTurn;
