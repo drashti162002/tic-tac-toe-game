@@ -7,8 +7,8 @@ body{
 
 .player1{
     border: 5px solid black;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 200px;
     /* text-align: center; */
     display: flex;
     justify-content: center;
@@ -19,8 +19,8 @@ body{
 
 .player2{
     border: 5px solid black;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +42,9 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 45px;
+}
+.cell:hover{
+    background-color:rgb(44, 181, 209);
 }
 .game_board{
     display: grid;
@@ -65,9 +68,18 @@ body{
     background-color: blue;
     color: white;
 }
+
+.result{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .disabled{
     pointer-events: none;
 }
-.disabled1{
-    display: none;
+
+.win_color{
+    background-color: red;
 }
