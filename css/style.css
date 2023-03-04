@@ -4,7 +4,12 @@ body{
     align-items: center;
     flex-direction: column;
 }
-
+.game_name{
+    margin-top: 20px;
+    font-weight: 900;
+    font-size: 40px;
+    color:rgb(64, 136, 64);
+}
 .player1{
     border: 5px solid black;
     height: 80px;
